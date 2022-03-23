@@ -4,8 +4,8 @@ let saveWord = (word) => {
   return axios.post('/api/words', word);
 }
 
-let readWords = () => {
-  return axios.get('/api/words');
+let readWords = (query = 'all') => {
+  return axios.get(`/api/words/${query}`);
 }
 
 let patchWord = (word) => {

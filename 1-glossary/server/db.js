@@ -26,9 +26,13 @@ let patchWord = function(word) {
   return dictionary.findOneAndUpdate({_id: `${id}`}, word, {new: true});
 }
 
-let readWords = function() {
+let readWords = function(query = '') {
   // dictionary.remove({}, (err,data)=>{console.log(err,data)});
-  return dictionary.find({});
+  if (query !== 'all') {
+    return dictionary.find({word: {$regex: query, $options: 'i'}});
+  } else {
+    return dictionary.find({});
+  }
 }
 
 module.exports = {

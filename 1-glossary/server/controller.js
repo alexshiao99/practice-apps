@@ -20,7 +20,7 @@ let patchWord = (req, res) => {
 }
 
 let readWords = (req, res) => {
-  db.readWords({})
+  db.readWords(req.params.query)
   .then((results) => res.send(results))
   .catch((error) => res.send(error))
 }

@@ -10,15 +10,9 @@ class WordList extends React.Component {
   }
 
   clickWord(word) {
-    if(this.state.clickedWord._id) {
-      this.setState({
-        clickedWord: {}
-      })
-    } else {
-      this.setState({
-        clickedWord: word
-      })
-    }
+    this.setState({
+      clickedWord: word
+    })
   }
 
   render() {
