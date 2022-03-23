@@ -3,8 +3,8 @@ const controller = require('./controller');
 
 router.get('/api/words', controller.readWords);
 router.post('/api/words', controller.saveWord);
-// router.patch();
-// router.delete();
+router.patch('/api/words', controller.patchWord);
+router.delete('/api/words/:_id', controller.deleteWord);
 
 
 module.exports = router;

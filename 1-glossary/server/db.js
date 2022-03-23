@@ -17,12 +17,13 @@ let saveWord = function(word) {
   return dictionary.create(word);
 }
 
-let deleteWord = function(word) {
-
+let deleteWord = function(id) {
+  return dictionary.findOneAndRemove({_id: `${id}`});
 }
 
 let patchWord = function(word) {
-
+  let id = word._id;
+  return dictionary.findOneAndUpdate({_id: `${id}`}, word, {new: true});
 }
 
 let readWords = function() {

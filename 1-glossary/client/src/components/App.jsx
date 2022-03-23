@@ -27,7 +27,7 @@ class App extends React.Component {
     return (
       <>
       <Submit reRender={this.renderDataAfterAPI.bind(this)}/>
-      <WordList words={this.state.words}/>
+      <WordList words={this.state.words} reRender={this.renderDataAfterAPI.bind(this)}/>
       </>
     )
   }
